@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fading Logo Animation</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f5;
+}
+
+.logo {
+    width: 300px;
+    animation: fadeEffect 5s ease-in-out infinite;
+}
+
+@keyframes fadeEffect {
+    0%   { opacity: 0; }
+    50%  { opacity: 1; }
+    100% { opacity: 0; }
+}
+</style>
+
+</head>
+<body>
+
+<img src="splash.jpeg" class="logo">
+
+<script>
+if (!sessionStorage.getItem("visited")) {
+    sessionStorage.setItem("visited", "true");
+
+    setTimeout(() => {
+        window.location.href = "index.php";
+    }, 3000);
+} else {
+    window.location.href = "index.php";
+}
+</script>
+
+</body>
+</html>
